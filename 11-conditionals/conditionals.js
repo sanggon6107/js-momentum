@@ -10,8 +10,8 @@ function noUnder20(){
     if(parseInt(age) >=20){
         return true;
     }
-    if (parseInt(age) === NaN){ // if(isNaN(age))
-        return NaN;
+    else if ( parseInt(age) === NaN || age < 0 ){ // if(isNaN(age)). &&연산자나 || 연산자도  c++과 똑같이 쓸 수 있다.
+        return NaN;                               // 참고 : ===의 반대는 !== 이다.
     }
     else{
         return false;
