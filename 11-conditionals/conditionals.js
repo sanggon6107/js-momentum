@@ -10,7 +10,7 @@ function noUnder20(){
     if(parseInt(age) >=20){
         return true;
     }
-    if (parseInt(age) === NaN){
+    if (parseInt(age) === NaN){ // if(isNaN(age))
         return NaN;
     }
     else{
