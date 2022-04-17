@@ -14,3 +14,4 @@ const query2 = document.querySelector(".myClass2 #here"); // here에 접근.
 
 console.dir(query2);
 query2.textContent = "text100!!!";
+query2.innerText = "innerText";
