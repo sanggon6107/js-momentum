@@ -1,0 +1,12 @@
+*{
+    background: beige;
+}
+
+h1{
+    color: cornflowerblue;
+}
+
+.active{
+    color: tomato;
+    font-family: 'Courier New', Courier, monospace;
+}
