@@ -3,7 +3,7 @@ const logInBtn = document.querySelector("#logInForm #logInBtn");
 
 
 function onClickLogInBtn(){
-    console.log(logInInput.value);
+    console.log("Hello, " + logInInput.value);
 }
 
 logInBtn.addEventListener("click", onClickLogInBtn);
