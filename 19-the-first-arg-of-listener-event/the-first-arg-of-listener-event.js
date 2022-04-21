@@ -1,9 +1,16 @@
 const logInInput = document.querySelector("#logInForm input");
 const logInForm = document.querySelector("#logInForm"); // form을 받아온다.
 
-function onLogInSubmit(event){
+const a = document.querySelector("div #linkToGoogle");
+
+function onLogInSubmit(event){ // event로 들어오는 인자는 submitEvent
     event.preventDefault();
     console.log("Hello, " + logInInput.value);
+}
+
+function onGoogleClick(event){ // event로 들어오는 인자는 clickEvent. 클릭 좌표 등의 다양한 정보를 담고 있다.
+    event.preventDefault();
+    console.log("Default prevented")
 }
 
 // submit은 기본적으로 브라우저가 새로고침 되게 만들어져있다.
@@ -13,3 +20,5 @@ function onLogInSubmit(event){
 // 정보를 담고있는 객체가 된다. 즉, 그 이벤트가 일어난 시각, target 등의 자료가 event에 들어온다.
 // event의 함수인 preventDefault()를 호출하면 기본 동작인 '새로고침'을 막을 수 있다.
 logInForm.addEventListener("submit", onLogInSubmit)
+
+a.addEventListener("click", onGoogleClick);
