@@ -1,6 +1,7 @@
 // 아래와 같이 js로 style을 바꿀 수 있다.
 // 하지만 기본적으로 style은 css가 전담하는 것이 좋다.
 // javascript는 인터랙션 담당, css는 style담당.
+
 const h1Tag = document.querySelector(".myClass:first-child h1");
 
 console.dir(h1Tag);
