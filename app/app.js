@@ -7,9 +7,9 @@ const HIDDEN = "hidden";
 
 function onLogInSubmit(event){
     event.preventDefault();
-    const userName = logInInput.value;
+    localStorage.setItem("userName", logInInput.value);
     logInForm.classList.add(HIDDEN);
-    greeting.innerText = `Hello, ${userName}.`;
+    greeting.innerText = `Hello, ${localStorage.getItem("userName")}.`;
     greeting.classList.remove(HIDDEN);
 }
 
