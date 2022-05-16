@@ -10,6 +10,15 @@ function deleteSomethingToDo(event)
     parentNode.remove();
 }
 
+function saveToDos()
+{
+    localStorage.setItem("toDos", JSON.stringify(toDos)); // localstorage는 string형태만 받을 수 있다. -> array를 통째로 string화 해서 저장한다.
+}
+function deleteSomethingToDo(event)
+{
+    parentNode = event.target.parentNode;
+    parentNode.remove();
+}
 
 function addSomethingToDo(somethingToDo)
 {
@@ -29,7 +38,9 @@ function handleToDoSubmit(event)
     event.preventDefault();
     const somethingToDo = toDoInput.value;
     toDoInput.value = "";
+    toDos.push(somethingToDo);
     addSomethingToDo(somethingToDo);
+    saveToDos();
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
