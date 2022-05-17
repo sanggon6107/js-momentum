@@ -5,6 +5,12 @@ const toDoList = document.querySelector("#toDoList");
 
 const toDos = [];
 
+function loadToDos()
+{
+    // localStorage.getItem 으로 가져온 다음, 파싱한다.
+}
+
+
 function saveToDos()
 {
     localStorage.setItem("toDos", JSON.stringify(toDos)); // localstorage는 string형태만 받을 수 있다. -> array를 통째로 string화 해서 저장한다.
