@@ -4,11 +4,7 @@ const toDoInput = toDoForm.querySelector("input"); // querySelector는 document�
 const toDoList = document.querySelector("#toDoList");
 
 const toDos = [];
-
-function loadToDos()
-{
-    // localStorage.getItem 으로 가져온 다음, 파싱한다.
-}
+const TODOS_KEY = "toDos";
 
 
 function saveToDos()
@@ -46,3 +42,10 @@ function handleToDoSubmit(event)
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+if(savedToDos !== null)
+{
+    const parsedToDos = JSON.parse(savedToDos);
+    parsedToDos.forEach((item) => console.log(`this is the turn of ${item}`));
+}
