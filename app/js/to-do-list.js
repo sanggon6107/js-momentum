@@ -24,7 +24,9 @@ function addSomethingToDo(somethingToDo)
     const span = document.createElement("span");
     const deleteButton = document.createElement("button");
     deleteButton.innerText = "❌";
-    deleteButton.addEventListener("click", deleteSomethingToDo);
+    deleteButton.addEventListener("click", deleteSomethingToDo); // 의문점 : addEventListener는 이 함수안에서 호출되고 있다.
+                                                                 // 이 함수가 끝나고 나면 여기에 있는 로컬 변수들은 사라지는 것이 아닌가?
+                                                                 // 그렇다면 이벤트 리스너는 어떻게 되는가?
     li.appendChild(span);
     li.appendChild(deleteButton);
     span.innerText = somethingToDo;
