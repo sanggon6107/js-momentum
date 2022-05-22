@@ -3,7 +3,7 @@ const toDoInput = toDoForm.querySelector("input"); // querySelector는 document�
                                                    // 박스와 같은 요소에서도 호출할 수 있다.
 const toDoList = document.querySelector("#toDoList");
 
-const toDos = [];
+let toDos = [];
 const TODOS_KEY = "toDos";
 
 
@@ -49,5 +49,6 @@ const savedToDos = localStorage.getItem(TODOS_KEY);
 if(savedToDos !== null)
 {
     const parsedToDos = JSON.parse(savedToDos);
-    parsedToDos.forEach((item) => console.log(`this is the turn of ${item}`));
+    toDos = parsedToDos;
+    parsedToDos.forEach(addSomethingToDo);
 }
