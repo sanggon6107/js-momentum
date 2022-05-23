@@ -21,6 +21,7 @@ function deleteSomethingToDo(event)
 function addSomethingToDo(somethingToDo)
 {
     const li = document.createElement("li");
+    li.id = somethingToDo.id;
     const span = document.createElement("span");
     const deleteButton = document.createElement("button");
     deleteButton.innerText = "❌";
@@ -29,7 +30,7 @@ function addSomethingToDo(somethingToDo)
                                                                  // 그렇다면 이벤트 리스너는 어떻게 되는가?
     li.appendChild(span);
     li.appendChild(deleteButton);
-    span.innerText = somethingToDo;
+    span.innerText = somethingToDo.text;
     toDoList.appendChild(li);
 }
 
@@ -38,12 +39,17 @@ function handleToDoSubmit(event)
     event.preventDefault();
     const somethingToDo = toDoInput.value;
     toDoInput.value = "";
-    toDos.push(somethingToDo);
-    addSomethingToDo(somethingToDo);
+    const newToDoObj = {
+        text : somethingToDo,
+        id : Date.now()
+    };
+    toDos.push(newToDoObj);
+    addSomethingToDo(newToDoObj);
     saveToDos();
 }
-
 toDoForm.addEventListener("submit", handleToDoSubmit);
+
+
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
 if(savedToDos !== null)
