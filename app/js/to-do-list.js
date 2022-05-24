@@ -15,6 +15,9 @@ function saveToDos()
 function deleteSomethingToDo(event)
 {
     parentNode = event.target.parentNode;
+    console.log(parentNode.id); // li의 id가 출력된다.
+    // id를 찾아서 그 id와 일치하는 것을 지운다. parentNode.remove()는 객체를 지우는 것이니 그대로 두고,
+    // toDos에서 해당id를 찾아서 지워야한다.
     parentNode.remove();
 }
 
